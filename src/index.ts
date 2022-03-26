@@ -7,7 +7,10 @@ let process: Deno.Process;
 // Clean exit
 const exit = async (code = 0) => {
   if (browser) await browser.close();
-  if (process) await process.close();
+  if (process) {
+    await process.kill("SIGINT");
+    await process.close();
+  }
   Deno.exit(code);
 };
 
