@@ -4,7 +4,7 @@ Touchscreen kiosk runner executable.
 
 # Kiosk Install
 
-On an Ubuntu machine, run the following.
+The below steps will provision a plug 'n' play kiosk touchscreen, running on Ubuntu.
 
 ```shell
 sudo apt-get update -y
