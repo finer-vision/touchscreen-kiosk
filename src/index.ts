@@ -1,5 +1,6 @@
 import puppeteer, { Browser } from "https://deno.land/x/puppeteer@9.0.2/mod.ts";
 import { exists } from "https://deno.land/std@0.132.0/fs/mod.ts";
+import { exec } from "https://deno.land/x/exec@0.0.5/mod.ts";
 
 let browser: Browser;
 
@@ -37,12 +38,24 @@ try {
     .find((arg) => arg.startsWith("--url="))
     ?.replace("--url=", "");
 
+  const start = args
+    .find((arg) => arg.startsWith("--start="))
+    ?.replace("--start=", "");
+
   // Has a url been provided?
   if (!url) {
     console.error(
       "Error: No --url flag, try again with --url=https://example.com"
     );
     Deno.exit(1);
+  }
+
+  if (start) {
+    exec(start).catch((err) => {
+      console.error(`Error: ${err.message}`);
+      Deno.exit(1);
+    });
+    await new Promise((resolve) => setTimeout(resolve, 1000));
   }
 
   browser = await puppeteer.launch({
