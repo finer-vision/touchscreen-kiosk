@@ -11,6 +11,7 @@ const exit = async (code = 0) => {
     await process.kill("SIGINT");
     await process.close();
   }
+  console.log("Kiosk exited");
   Deno.exit(code);
 };
 
