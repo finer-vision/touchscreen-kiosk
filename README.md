@@ -65,7 +65,7 @@ Finally, go to `Settings` > `Power` and make sure the computer never goes to sle
 ### Usage
 
 ```shell
-touchscreen-kiosk --url=https://example.com
+touchscreen-kiosk --url=https://example.com --start="node ~/apps/repo/build/index.js"
 ```
 
 ### Getting Started
