@@ -1,12 +1,13 @@
 import puppeteer, { Browser } from "https://deno.land/x/puppeteer@9.0.2/mod.ts";
 import { exists } from "https://deno.land/std@0.132.0/fs/mod.ts";
-import { exec } from "https://deno.land/x/exec@0.0.5/mod.ts";
 
 let browser: Browser;
+let process: Deno.Process;
 
 // Clean exit
 const exit = async (code = 0) => {
   if (browser) await browser.close();
+  if (process) await process.close();
   Deno.exit(code);
 };
 
@@ -51,9 +52,9 @@ try {
   }
 
   if (start) {
-    exec(start).catch((err) => {
-      console.error(`Error: ${err.message}`);
-      Deno.exit(1);
+    process = Deno.run({
+      cmd: start.split(" "),
+      stdout: "inherit",
     });
     await new Promise((resolve) => setTimeout(resolve, 1000));
   }
