@@ -2,7 +2,7 @@
 
 Touchscreen kiosk runner executable.
 
-### Installing Kiosk
+# Kiosk Install
 
 On an Ubuntu machine, run the following.
 
@@ -56,13 +56,19 @@ Finally, go to `Settings` > `Power` and make sure the computer never goes to sle
 
 ---
 
+# Development
+
+### Software
+
+- deno 1.20.3
+
 ### Usage
 
 ```shell
 touchscreen-kiosk --url=https://example.com
 ```
 
-### Getting Started (Development)
+### Getting Started
 
 ```shell
 deno cache --unstable src/index.ts
