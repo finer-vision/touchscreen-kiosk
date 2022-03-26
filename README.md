@@ -14,3 +14,9 @@ deno run -A --unstable src/index.ts
 ```shell
 deno compile -A --unstable --output touchscreen-kiosk src/index.ts
 ```
+
+### Executable Usage
+
+```shell
+./touchscreen-kiosk --url=https://example.com
+```
