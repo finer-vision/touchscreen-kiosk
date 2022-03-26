@@ -9,10 +9,11 @@ deno cache --unstable src/index.ts
 deno run -A --unstable src/index.ts
 ```
 
-### Compile Executable
+### Compile & Release
 
 ```shell
 ./bin/build.sh
+./bin/release.sh
 ```
 
 ### Executable Usage
