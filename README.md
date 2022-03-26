@@ -4,13 +4,13 @@ Touchscreen kiosk runner executable.
 
 ### Getting Started
 
-```shell
+```console
 deno cache --unstable src/index.ts
 deno run -A --unstable src/index.ts
 ```
 
 ### Compile Executable
 
-```shell
+```console
 deno compile -A --unstable --output touchscreen-kiosk src/index.ts
 ```
