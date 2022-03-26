@@ -49,7 +49,6 @@ try {
     headless: false,
     executablePath,
     args: [
-      "--remote-debugging-port=9222",
       "--no-first-run",
       "--disable-pinch",
       "--no-default-check",

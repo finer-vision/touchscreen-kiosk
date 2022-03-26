@@ -1,3 +1,5 @@
 .idea/
 .DS_Store
-touchscreen-kiosk
+touchscreen-kiosk-linux
+touchscreen-kiosk-windows.exe
+touchscreen-kiosk-macos

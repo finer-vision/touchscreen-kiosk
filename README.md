@@ -12,7 +12,7 @@ deno run -A --unstable src/index.ts
 ### Compile Executable
 
 ```shell
-deno compile -A --unstable --output touchscreen-kiosk src/index.ts
+./bin/build.sh
 ```
 
 ### Executable Usage
@@ -20,3 +20,8 @@ deno compile -A --unstable --output touchscreen-kiosk src/index.ts
 ```shell
 ./touchscreen-kiosk --url=https://example.com
 ```
+
+### Debugging
+
+Open a new Google Chrome window and visit [chrome://inspect/#pages](chrome://inspect/#pages),
+then click `inspect` on the page running the app.
