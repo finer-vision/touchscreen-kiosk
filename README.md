@@ -45,7 +45,7 @@ Start the app when the system starts:
 
 ```shell
 # Run the app
-pm2 start --name kiosk /usr/bin/touchscreen-kiosk -- --url=http://localhost:3000 --start="node ~/apps/repo/build/index.js"
+pm2 start --name kiosk /usr/bin/touchscreen-kiosk -- --url=http://localhost:3000 --start="node ~/apps/repo/server/build/index.js"
 # Save the app so it starts with the system
 pm2 save
 ```
