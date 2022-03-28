@@ -72,6 +72,7 @@ try {
       "--no-default-check",
       "--overscroll-history-navigation=0",
       `--app=${url}`,
+      "--autoplay-policy=no-user-gesture-required",
     ],
     ignoreDefaultArgs: [
       "--enable-automation",
