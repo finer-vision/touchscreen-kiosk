@@ -67,7 +67,7 @@ try {
     .find((arg) => arg.startsWith("--mode="))
     ?.replace("--mode=", "") ?? "production";
 
-  const args: string[] = [
+  const browserArgs: string[] = [
     "--no-first-run",
     "--disable-pinch",
     "--no-default-check",
@@ -77,13 +77,13 @@ try {
   ];
 
   if (mode === "production") {
-    args.push("--kiosk")
+    browserArgs.push("--kiosk")
   }
 
   browser = await puppeteer.launch({
     headless: false,
     executablePath,
-    args,
+    args: browserArgs,
     ignoreDefaultArgs: [
       "--enable-automation",
       "--enable-blink-features=IdleDetection",
