@@ -63,17 +63,27 @@ try {
     await new Promise((resolve) => setTimeout(resolve, 1000));
   }
 
+  const mode = args
+    .find((arg) => arg.startsWith("--mode="))
+    ?.replace("--mode=", "") ?? "production";
+
+  const args: string[] = [
+    "--no-first-run",
+    "--disable-pinch",
+    "--no-default-check",
+    "--overscroll-history-navigation=0",
+    `--app=${url}`,
+    "--autoplay-policy=no-user-gesture-required",
+  ];
+
+  if (mode === "production") {
+    args.push("--kiosk")
+  }
+
   browser = await puppeteer.launch({
     headless: false,
     executablePath,
-    args: [
-      "--no-first-run",
-      "--disable-pinch",
-      "--no-default-check",
-      "--overscroll-history-navigation=0",
-      `--app=${url}`,
-      "--autoplay-policy=no-user-gesture-required",
-    ],
+    args,
     ignoreDefaultArgs: [
       "--enable-automation",
       "--enable-blink-features=IdleDetection",
