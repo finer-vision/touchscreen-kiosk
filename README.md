@@ -7,8 +7,8 @@ Touchscreen kiosk runner executable.
 The below steps will provision a plug 'n' play kiosk touchscreen, running on Ubuntu.
 
 ```shell
-sudo apt-get update -y
-sudo apt-get install -y curl
+sudo apt update -y
+sudo apt install -y curl
 curl -sf -L https://github.com/finer-vision/touchscreen-kiosk/raw/main/bin/install.sh | sudo sh
 ```
 
