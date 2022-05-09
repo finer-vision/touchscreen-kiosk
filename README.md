@@ -52,8 +52,6 @@ pm2 save
 
 Restart the system and the app should automatically run when the system starts.
 
-Finally, go to `Settings` > `Power` and make sure the computer never goes to sleep and the screen never dims.
-
 ---
 
 # Development

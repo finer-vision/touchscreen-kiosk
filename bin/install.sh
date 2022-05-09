@@ -9,6 +9,8 @@ pm2 startup
 sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp /home/$USER
 # Prevent software popup from showing
 gsettings set com.ubuntu.update-notifier no-show-notifications true
+# Prevent display from turning off
+gsettings set org.gnome.settings-daemon.plugins.power idle-dim true
 printf "System setup complete\n"
 
 printf "Installing Google Chrome...\n"
