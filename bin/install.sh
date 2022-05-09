@@ -1,15 +1,6 @@
 #!/usr/bin/env bash
 
-os=$(uname -s | awk '{print tolower($0)}')
-
-if [[ ${machine} != "linux" ]]
-then
-    printf "Error: This script is only executable on a Linux machine\n"
-    exit 1
-fi
-
 printf "Setting up system...\n"
-DEBIAN_FRONTEND=noninteractive
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 sudo apt update -y
 sudo apt install -y build-essential git nodejs unclutter xinput-calibrator chrome-gnome-shell teamviewer curl wget gnome-tweaks
