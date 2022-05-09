@@ -17,8 +17,8 @@ dpkg -i google-chrome-stable_current_amd64.deb
 printf "Google Chrome installation complete\n"
 
 printf "Disabling touch gestures...\n"
-wget -c https://extensions.gnome.org/extension-data/disable-gestures-2021verycrazydog.gmail.com.v4.shell-extension.zip -O disable-gestures.zip
-gnome-extensions install -f disable-gestures.zip
+wget -c https://extensions.gnome.org/extension-data/disable-gestures-2021verycrazydog.gmail.com.v4.shell-extension.zip
+gnome-extensions install -f disable-gestures-2021verycrazydog.gmail.com.v4.shell-extension.zip
 # Reload GNOME shell
 killall -3 gnome-shell
 gnome-extensions enable disable-gestures-2021@verycrazydog.gmail.com
@@ -32,5 +32,5 @@ printf "touchscreen-kiosk installed\n"
 
 printf "Cleaning up...\n"
 rm -f google-chrome-stable_current_amd64.deb
-rm -f disable-gestures.zip
+rm -f disable-gestures-2021verycrazydog.gmail.com.v4.shell-extension.zip
 printf "Finished\n"
