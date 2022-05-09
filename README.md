@@ -20,8 +20,8 @@ Open TeamViewer:
 Generate SSH key:
 
 ```shell
-ssh-keygen -q -t rsa -N '' -f /home/fv/.ssh/id_rsa <<<y
-cat /home/fv/.ssh/id_rsa.pub
+ssh-keygen -q -t rsa -N '' -f /home/$USER/.ssh/id_rsa <<<y
+cat /home/$USER/.ssh/id_rsa.pub
 ```
 
 Copy the public key to the GitHub repository:
