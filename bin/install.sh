@@ -3,7 +3,7 @@
 printf "Setting up system...\n"
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 sudo apt update -y
-sudo apt install -y build-essential git nodejs unclutter xinput-calibrator chrome-gnome-shell teamviewer curl wget gnome-tweaks
+sudo apt install -y build-essential git nodejs unclutter xinput-calibrator chrome-gnome-shell teamviewer curl wget gnome-shell-extension-prefs
 sudo npm add -g pm2
 pm2 startup
 sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp /home/$USER
@@ -19,6 +19,8 @@ printf "Google Chrome installation complete\n"
 printf "Disabling touch gestures...\n"
 wget -c https://extensions.gnome.org/extension-data/disable-gestures-2021verycrazydog.gmail.com.v4.shell-extension.zip -O disable-gestures.zip
 gnome-extensions install -f disable-gestures.zip
+# Reload GNOME shell
+killall -3 gnome-shell
 gnome-extensions enable disable-gestures-2021@verycrazydog.gmail.com
 printf "Touch gestures disabled\n"
 
