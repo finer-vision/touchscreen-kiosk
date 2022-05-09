@@ -9,7 +9,7 @@ The below steps will provision a plug 'n' play kiosk touchscreen, running on Ubu
 ```shell
 sudo apt update -y
 sudo apt install -y curl
-curl -sf -L https://github.com/finer-vision/touchscreen-kiosk/raw/main/bin/install.sh | sudo sh
+curl -fsSL https://github.com/finer-vision/touchscreen-kiosk/raw/main/bin/install.sh | sudo sh
 ```
 
 Open TeamViewer:
