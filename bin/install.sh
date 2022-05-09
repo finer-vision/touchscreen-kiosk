@@ -12,10 +12,10 @@ printf "Setting up system...\n"
 DEBIAN_FRONTEND=noninteractive
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 sudo apt update -y
-sudo apt install -y build-essential git nodejs unclutter xinput-calibrator chrome-gnome-shell teamviewer curl wget
+sudo apt install -y build-essential git nodejs unclutter xinput-calibrator chrome-gnome-shell teamviewer curl wget gnome-tweaks
 sudo npm add -g pm2
 pm2 startup
-sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u fv --hp /home/fv
+sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp /home/$USER
 # Prevent software popup from showing
 gsettings set com.ubuntu.update-notifier no-show-notifications true
 printf "System setup complete\n"
@@ -26,9 +26,9 @@ dpkg -i google-chrome-stable_current_amd64.deb
 printf "Google Chrome installation complete\n"
 
 printf "Disabling touch gestures...\n"
-wget https://extensions.gnome.org/extension-data/disable-gestures%40mattbell.com.au.v2.shell-extension.zip
-gnome-extensions install -f disable-gestures@mattbell.com.au.v2.shell-extension.zip
-gnome-extensions enable disable-gestures@mattbell.com.au
+wget -c https://extensions.gnome.org/extension-data/disable-gestures-2021verycrazydog.gmail.com.v4.shell-extension.zip -O disable-gestures.zip
+gnome-extensions install -f disable-gestures.zip
+gnome-extensions enable disable-gestures-2021@verycrazydog.gmail.com
 printf "Touch gestures disabled\n"
 
 printf "Installing touchscreen-kiosk...\n";
@@ -39,5 +39,5 @@ printf "touchscreen-kiosk installed\n"
 
 printf "Cleaning up...\n"
 rm -f google-chrome-stable_current_amd64.deb
-rm -f disable-gestures@mattbell.com.au.v2.shell-extension.zip
+rm -f disable-gestures.zip
 printf "Finished\n"
