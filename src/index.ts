@@ -67,6 +67,14 @@ try {
     .find((arg) => arg.startsWith("--mode="))
     ?.replace("--mode=", "") ?? "production";
 
+  const delayArg = args
+    .find((arg) => arg.startsWith("--delay="))
+    ?.replace("--delay=", "") ?? "0";
+  let delay = parseInt(delayArg);
+  if (isNaN(delay)) {
+    delay = 0;
+  }
+
   const browserArgs: string[] = [
     "--no-first-run",
     "--disable-pinch",
@@ -79,6 +87,8 @@ try {
   if (mode === "production") {
     browserArgs.push("--kiosk")
   }
+
+  await new Promise(resolve => setTimeout(resolve, delay));
 
   browser = await puppeteer.launch({
     headless: false,
