@@ -84,6 +84,7 @@ try {
     "--autoplay-policy=no-user-gesture-required",
     "--start-fullscreen",
     "--debugging-port=9222",
+    "--user-data-dir=kiosk",
   ];
 
   if (mode === "production") {
