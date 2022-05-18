@@ -1,8 +1,11 @@
 import puppeteer, { Browser } from "https://deno.land/x/puppeteer@9.0.2/mod.ts";
 import { exists } from "https://deno.land/std@0.132.0/fs/mod.ts";
+import os from "https://deno.land/x/dos@v0.11.0/mod.ts";
 
 let browser: Browser;
 let process: Deno.Process;
+
+const homeDir = os.homeDir();
 
 // Clean exit
 const exit = async (code = 0) => {
@@ -83,8 +86,8 @@ try {
     `--app=${url}`,
     "--autoplay-policy=no-user-gesture-required",
     "--start-fullscreen",
-    "--debugging-port=9222",
-    "--user-data-dir=kiosk",
+    "--remote-debugging-port=9222",
+    `--user-data-dir=${homeDir}/kiosk`,
   ];
 
   if (mode === "production") {
@@ -95,6 +98,7 @@ try {
 
   browser = await puppeteer.launch({
     headless: false,
+    devtools: true,
     executablePath,
     args: browserArgs,
     ignoreDefaultArgs: [
