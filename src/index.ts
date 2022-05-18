@@ -98,7 +98,6 @@ try {
 
   browser = await puppeteer.launch({
     headless: false,
-    devtools: true,
     executablePath,
     args: browserArgs,
     ignoreDefaultArgs: [
