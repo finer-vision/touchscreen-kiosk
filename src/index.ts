@@ -83,6 +83,7 @@ try {
     `--app=${url}`,
     "--autoplay-policy=no-user-gesture-required",
     "--start-fullscreen",
+    "--debugging-port=9222",
   ];
 
   if (mode === "production") {
