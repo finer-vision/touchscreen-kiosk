@@ -54,6 +54,16 @@ Restart the system and the app should automatically run when the system starts.
 
 ---
 
+### External Display Troubleshooting
+
+If the machine has an NVIDIA graphic card, you will need to run the following command to ensure compatibility wuth external displays:
+
+```shell
+sudo ubuntu-drivers autoinstall
+```
+
+
+
 # Development
 
 ### Software
