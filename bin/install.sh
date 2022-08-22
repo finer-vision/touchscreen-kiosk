@@ -3,6 +3,7 @@
 printf "Setting up system...\n"
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 sudo apt update -y
+sudo apt install -y libminizip1
 sudo apt install -y build-essential git nodejs unclutter xinput-calibrator chrome-gnome-shell teamviewer curl wget gnome-shell-extension-prefs
 sudo npm add -g pm2
 pm2 startup
