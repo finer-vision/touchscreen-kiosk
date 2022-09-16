@@ -94,3 +94,12 @@ deno run -A --unstable src/index.ts
 
 Open a new Google Chrome window and visit [chrome://inspect/#pages](chrome://inspect/#pages),
 then click `inspect` on the page running the app.
+
+### Touchscreen Notes
+
+If you need portrait instead of the default landscape orientation, run these two commands when the machine first loads into the desktop. Note, this will reset on reboot, so make sure you run the each time the touchscreen starts.
+
+```shell
+xrandr -o left
+xinput set-prop "Sharp Corp.   TPC-IC   USB HID" --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
+```
