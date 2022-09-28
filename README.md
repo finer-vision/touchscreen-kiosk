@@ -17,16 +17,9 @@ Open TeamViewer:
 1. Go to `Extras` > `Options` and tick "Start TeamViewer with system"
 2. Go to `Security` and click "Grant easy access"
 
-Generate SSH key:
-
-```shell
-ssh-keygen -q -t rsa -N '' -f /home/$USER/.ssh/id_rsa <<<y
-cat /home/$USER/.ssh/id_rsa.pub
-```
-
 Copy the public key to the GitHub repository:
 
-https://github.com/finer-vision/repo/settings/keys
+[https://github.com/finer-vision/repo/settings/keys](https://github.com/finer-vision/repo/settings/keys)
 
 Clone an app into the `/home/$USER/apps` directory:
 
