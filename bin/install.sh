@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 printf "Setting up system...\n"
-curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt update -y
-sudo apt install -y dbus-x11 build-essential git nodejs npm unclutter xinput-calibrator chrome-gnome-shell libminizip1 libxcb-xinerama0 curl wget gnome-shell-extension-prefs
+sudo apt install -y dbus-x11 build-essential git nodejs unclutter xinput-calibrator chrome-gnome-shell libminizip1 libxcb-xinerama0 curl wget gnome-shell-extension-prefs
 sudo ubuntu-drivers autoinstall
 curl https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 sudo dpkg -i teamviewer_*.deb
