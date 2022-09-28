@@ -44,6 +44,8 @@ git clone git@github.com:finer-vision/repo.git
 Start the app when the system starts:
 
 ```shell
+pm2 startup
+sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp /home/$USER
 # Run the app
 pm2 start --name kiosk /usr/bin/touchscreen-kiosk -- --url=http://localhost:3000 --start="node /home/$USER/apps/repo/server/build/index.js" --delay=3000
 # Save the app so it starts with the system
