@@ -4,6 +4,7 @@ printf "Setting up system...\n"
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 sudo apt update -y
 sudo apt install -y dbus-x11 build-essential git nodejs unclutter xinput-calibrator chrome-gnome-shell libminizip1 libxcb-xinerama0 curl wget gnome-shell-extension-prefs
+sudo ubuntu-drivers autoinstall
 curl https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 sudo dpkg -i teamviewer_*.deb
 sudo npm add -g pm2 serve
@@ -15,7 +16,7 @@ pm2 save --force
 gsettings set com.ubuntu.update-notifier no-show-notifications true
 # Prevent display from turning off
 gsettings set org.gnome.settings-daemon.plugins.power idle-dim true
-mkdir /home/$USER/apps
+mkdir -p /home/$USER/apps
 ssh-keygen -q -t rsa -N '' -f /home/$USER/.ssh/id_rsa <<<y
 printf "System setup complete\n"
 
