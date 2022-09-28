@@ -28,24 +28,16 @@ Copy the public key to the GitHub repository:
 
 https://github.com/finer-vision/repo/settings/keys
 
-Create a directory to house all apps:
+Clone an app into the `/home/$USER/apps` directory:
 
 ```shell
-mkdir ~/apps
-cd ~/apps
-```
-
-Clone an app into the `apps` directory:
-
-```shell
+cd /home/$USER/apps
 git clone git@github.com:finer-vision/repo.git
 ```
 
 Start the app when the system starts:
 
 ```shell
-pm2 startup
-sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp /home/$USER
 # Run the app
 pm2 start --name kiosk /usr/bin/touchscreen-kiosk -- --url=http://localhost:3000 --start="node /home/$USER/apps/repo/server/build/index.js" --delay=3000
 # Save the app so it starts with the system
@@ -55,16 +47,6 @@ pm2 save
 Restart the system and the app should automatically run when the system starts.
 
 ---
-
-### External Display Troubleshooting
-
-If the machine has an NVIDIA graphic card, you will need to run the following command to ensure compatibility wuth external displays:
-
-```shell
-sudo ubuntu-drivers autoinstall
-```
-
-
 
 # Development
 
