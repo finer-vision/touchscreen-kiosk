@@ -15,6 +15,8 @@ pm2 save --force
 gsettings set com.ubuntu.update-notifier no-show-notifications true
 # Prevent display from turning off
 gsettings set org.gnome.settings-daemon.plugins.power idle-dim true
+mkdir /home/$USER/apps
+ssh-keygen -q -t rsa -N '' -f /home/$USER/.ssh/id_rsa <<<y
 printf "System setup complete\n"
 
 printf "Installing Google Chrome...\n"
@@ -41,3 +43,6 @@ rm -f teamviewer_*.deb
 # Reload GNOME shell
 killall -3 gnome-shell
 printf "Finished\n"
+
+printf "Add this deploy key to the GitHub repo you want to clone:\n"
+cat /home/$USER/.ssh/id_rsa.pub
