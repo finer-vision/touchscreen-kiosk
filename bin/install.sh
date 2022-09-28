@@ -7,8 +7,6 @@ sudo apt install -y build-essential git nodejs unclutter xinput-calibrator chrom
 curl https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 sudo dpkg -i teamviewer_*.deb
 sudo npm add -g pm2 serve
-pm2 startup
-sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp /home/$USER
 # Prevent software popup from showing
 gsettings set com.ubuntu.update-notifier no-show-notifications true
 # Prevent display from turning off
