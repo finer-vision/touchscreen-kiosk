@@ -23,6 +23,7 @@ const executablePaths: { [os: string]: string } = {
   linux: "/usr/bin/google-chrome",
   win32: "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
   win64: "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+  windows: "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 };
 
 const executablePath = executablePaths[Deno.build.os];
