@@ -79,10 +79,10 @@ If you need portrait instead of the default landscape orientation, run these two
 ```shell
 #!/usr/bin/env bash
 sleep 5
-INOUT_DEVICE=$(xinput list | awk -F'[=\t]' '/HID.*pointer/ {print $3; exit}')
+INPUT_DEVICE=$(xinput list | awk -F'[=\t]' '/HID.*pointer/ {print $3; exit}')
 OUTPUT_DEVICE=$(xrandr | grep -w connected | awk '{print $1}')
 xrandr -o left
-xinput map-to-output $INOUT_DEVICE $OUTPUT_DEVICE
+xinput map-to-output $INPUT_DEVICE $OUTPUT_DEVICE
 /usr/bin/touchscreen-kiosk \
 	--url=http://localhost:3000 \
 	--start="serve -s -p 3000 -d /home/$USER/apps/repo/build"
