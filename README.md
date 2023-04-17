@@ -77,6 +77,13 @@ then click `inspect` on the page running the app.
 If you need portrait instead of the default landscape orientation, run these two commands when the machine first loads into the desktop. Note, this will reset on reboot, so make sure you run the each time the touchscreen starts.
 
 ```shell
+#!/usr/bin/env bash
+sleep 5
+INOUT_DEVICE=$(xinput list | awk -F'[=\t]' '/HID.*pointer/ {print $3; exit}')
+OUTPUT_DEVICE=$(xrandr | grep -w connected | awk '{print $1}')
 xrandr -o left
-xinput set-prop "Sharp Corp.   TPC-IC   USB HID" --type=float "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
+xinput map-to-output $INOUT_DEVICE $OUTPUT_DEVICE
+/usr/bin/touchscreen-kiosk \
+	--url=http://localhost:3000 \
+	--start="serve -s -p 3000 -d /home/$USER/apps/repo/build"
 ```
