@@ -4,12 +4,20 @@ Touchscreen kiosk runner executable.
 
 # Kiosk Install
 
-The below steps will provision a plug 'n' play kiosk touchscreen, running on Ubuntu.
+The below steps will provision a plug 'n' play kiosk touchscreen, running on Ubuntu 20.04.
 
 ```shell
 sudo apt update -y
 sudo apt install -y curl
-curl -fsSL https://github.com/finer-vision/touchscreen-kiosk/raw/main/bin/install.sh | sudo -S -i -u $USER bash -s
+curl -fsSL https://github.com/finer-vision/touchscreen-kiosk/raw/main/bin/install-20.04.sh | sudo -S -i -u $USER bash -s
+```
+
+The below steps will provision a plug 'n' play kiosk touchscreen, running on Ubuntu 22.04.
+
+```shell
+sudo apt update -y
+sudo apt install -y curl
+curl -fsSL https://github.com/finer-vision/touchscreen-kiosk/raw/main/bin/install-22.04.sh | sudo -S -i -u $USER bash -s
 ```
 
 Open TeamViewer:
