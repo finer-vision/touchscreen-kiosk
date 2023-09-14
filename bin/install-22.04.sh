@@ -16,8 +16,6 @@ sudo apt update -y
 sudo apt install nodejs -y
 
 sudo ubuntu-drivers autoinstall
-curl https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
-sudo dpkg -i teamviewer_*.deb
 sudo npm add -g pm2 serve
 # node app manager
 pm2 startup
@@ -51,7 +49,6 @@ printf "Touch gestures disabled\n"
 printf "Cleaning up...\n"
 rm -f google-chrome-stable_current_amd64.deb
 rm -f disable-gestures-2021verycrazydog.gmail.com.v4.shell-extension.zip
-rm -f teamviewer_*.deb
 # Reload GNOME shell
 killall -3 gnome-shell
 printf "Finished\n"
