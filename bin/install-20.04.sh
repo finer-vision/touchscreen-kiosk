@@ -12,6 +12,9 @@ NODE_MAJOR=18
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 sudo dpkg -i --force-overwrite /var/cache/apt/archives/nodejs_$NODE_MAJOR.*-deb-1nodesource1_amd64.deb
 
+sudo apt update -y
+sudo apt install nodejs -y
+
 sudo ubuntu-drivers autoinstall
 curl https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 sudo dpkg -i teamviewer_*.deb
