@@ -9,7 +9,7 @@ The below steps will provision a plug 'n' play kiosk touchscreen, running on Ubu
 ```shell
 sudo apt update -y
 sudo apt install -y curl
-curl -fsSL https://github.com/finer-vision/touchscreen-kiosk/raw/main/bin/install-20.04.sh | sudo -S -i -u $USER bash -s
+curl -fsSL https://raw.githubusercontent.com/finer-vision/touchscreen-kiosk/main/bin/install-20.04.sh | sudo -S -i -u $USER bash -s
 ```
 
 The below steps will provision a plug 'n' play kiosk touchscreen, running on Ubuntu 22.04.
@@ -17,7 +17,7 @@ The below steps will provision a plug 'n' play kiosk touchscreen, running on Ubu
 ```shell
 sudo apt update -y
 sudo apt install -y curl
-curl -fsSL https://github.com/finer-vision/touchscreen-kiosk/raw/main/bin/install-22.04.sh | sudo -S -i -u $USER bash -s
+curl -fsSL https://raw.githubusercontent.com/finer-vision/touchscreen-kiosk/main/bin/install-22.04.sh | sudo -S -i -u $USER bash -s
 ```
 
 Open TeamViewer:
