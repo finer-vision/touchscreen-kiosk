@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 printf "Setting up system...\n"
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt update -y
 sudo apt install -y dbus-x11 build-essential git unclutter xinput-calibrator chrome-gnome-shell libminizip1 libxcb-xinerama0 curl wget gnome-shell-extension-prefs
 
