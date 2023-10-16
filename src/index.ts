@@ -88,6 +88,7 @@ try {
     "--autoplay-policy=no-user-gesture-required",
     "--start-fullscreen",
     "--remote-debugging-port=9222",
+    "--ignore-gpu-blocklist",
     `--user-data-dir=${homeDir}/kiosk`,
   ];
 
