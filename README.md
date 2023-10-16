@@ -95,3 +95,11 @@ xinput map-to-output $INPUT_DEVICE $OUTPUT_DEVICE
 	--url=http://localhost:3000 \
 	--start="serve -s -p 3000 -d /home/$USER/apps/repo/build"
 ```
+
+### Disable Screen Keyboard
+
+```shell
+wget https://github.com/lxylxy123456/cariboublocker/releases/download/auto-release-7cbc3f1582f3848995ba3c985efd26b911a33af9/3.36.3.zip -O block-caribou-36@lxylxy123456.ercli.dev.zip
+gnome-extensions install -f block-caribou-36@lxylxy123456.ercli.dev.zip
+gnome-extensions enable block-caribou-36@lxylxy123456.ercli.dev
+```
