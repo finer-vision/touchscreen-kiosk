@@ -1,4 +1,4 @@
-import puppeteer, { Browser } from "https://deno.land/x/puppeteer@9.0.2/mod.ts";
+import puppeteer, { Browser } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
 import { exists } from "https://deno.land/std@0.132.0/fs/mod.ts";
 import os from "https://deno.land/x/dos@v0.11.0/mod.ts";
 
